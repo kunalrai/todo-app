@@ -1,7 +1,5 @@
 // set up ======================================================================
 var express = require('express');
-var expressSession = require('express-session');
-var cookieParser = require('cookie-parser');
 var app = express(); 						// create our app w/ express
 var mongoose = require('mongoose'); 				// mongoose for mongodb
 var port = process.env.PORT || 8080; 				// set the port
@@ -12,12 +10,7 @@ var methodOverride = require('method-override');
 
 // configuration ===============================================================
 
-mongoose.connect(database.modulusUrl,function(){
-	console.log("Connected to DB " + database.modulusUrl);
-}); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
-
-app.use(express.static('./client')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json
@@ -26,8 +19,6 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 
 
 // routes ======================================================================
-
-require('./server/routes.js')(app);
 
 
 // listen (start app with node server.js) ======================================
