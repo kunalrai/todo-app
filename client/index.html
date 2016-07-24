@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="kunalTodo">
+	<head>
+		<!-- META -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+		<title>Node/Angular Todo App by Kunal Rai</title>
+		<!-- SCROLLS -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+		<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<!-- SPELLS -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+		<script src="js/lib/angular-ui-router.min.js"></script>
+		<script src="js/controllers/userCtrl.js"></script>
+		<script src="js/services/adminservice.js"></script>
+		<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+		<script src="js/services/todos.js"></script> <!-- load our todo service -->
+		<script src="js/appRoutes.js"></script>
+		<script src="js/core.js"></script> <!-- load our main application -->
+	</head>
+	<!-- SET THE CONTROLLER -->
+	<body>
+		<!-- HEADER -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" >TO DO App</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a ui-sref="todo">Home</a></li>
+					<li><a ui-sref="signup">signup</a></li>
+					
+				</ul>
+			</div>
+		</nav>
+		 <div ui-view></div>
+   
+  
+	</body>
+</html>
