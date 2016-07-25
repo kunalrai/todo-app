@@ -11,5 +11,5 @@ module.exports = function(app){
     app.post('/api/users', User.createUser);
 
        // delete a todo
-    app.delete('/api/users/:todo_id', User.deteteUser);
+    app.delete('/api/users/:user_id', User.deteteUser);
   };
