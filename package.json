@@ -16,10 +16,5 @@
   },
   "engines" : {
     "node": "4.4.7"
-  },
-   "scripts": {
-    "postinstall": "bower install",
-    "prestart": "npm install",
-    "start": "node server.js"
-  } 
+  }
 }
