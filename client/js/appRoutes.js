@@ -7,11 +7,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('todo', {
             url: "/todo",
-            templateUrl: "todo.html"
+            templateUrl: "view/todo.html"
         })
         .state('signup', {
             url: "/signup",
-            templateUrl: "signup.html"
+            templateUrl: "view/signup.html"
+        })
+         .state('login', {
+            url: "/login",
+            templateUrl: "view/login.html"
         })
 
 });

@@ -11,18 +11,27 @@
 		<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="assets/css/form-elements.css">
 		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 		<!-- SPELLS -->
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 		<script src="js/lib/angular-ui-router.min.js"></script>
 		
 		<script src="js/services/adminservice.js"></script>
 		<script src="js/controllers/userCtrl.js"></script>
-	
+		
 		<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 		<script src="js/services/todos.js"></script> <!-- load our todo service -->
 		<script src="js/core.js"></script> <!-- load our main application -->
 		<script src="js/appRoutes.js"></script>
-
 	</head>
 	<!-- SET THE CONTROLLER -->
 	<body>
@@ -39,8 +48,20 @@
 				</ul>
 			</div>
 		</nav>
-		 <div ui-view></div>
-   
-  
-	</body>
-</html>
+		<div ui-view></div>
+		<div class="all-bottom">
+			<div class="text-center text-muted">
+				<p>A demo by <a href="#">Kunal Rai</a>.</p>
+				<p>download source <a href="https://github.com/kunalrai/todo-app">here</a></a>.</p>
+			</div></div>
+			<div data-growl=""></div>
+			<script src="assets/js/jquery-1.11.1.min.js"></script>
+			<script src="assets/js/jquery.backstretch.min.js"></script>
+			<script src="assets/js/retina-1.1.0.min.js"></script>
+			<script src="assets/js/scripts.js"></script>
+			
+			<!--[if lt IE 10]>
+			<script src="assets/js/placeholder.js"></script>
+			<![endif]-->
+		</body>
+	</html>

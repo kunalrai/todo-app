@@ -3,16 +3,16 @@
 
 	// super simple service
 	// each function returns a promise object 
-	.factory('adminService', ['$http',function($http) {
+	.factory('admin', ['$http',function($http) {
 		return {
 			get : function() {
-				return $http.get('/api/user');
+				return $http.get('/api/users');
 			},
-			create : function(todoData) {
-				return $http.post('/api/user', userData);
+			create : function(userData) {
+				return $http.post('/api/users', userData);
 			},
 			delete : function(id) {
-				return $http.delete('/api/user/' + id);
+				return $http.delete('/api/users/' + id);
 			}
 		}
 	}]);

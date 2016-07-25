@@ -20,7 +20,7 @@ mongoose.connect(database.modulusUrl,function(){
 }); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
 
-app.use(express.static('./client')); 		// set the static files location /public/img will be /img for users
+app.use(express.static(	'./client')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json

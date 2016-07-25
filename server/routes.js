@@ -1,4 +1,5 @@
 var Todo = require('./models/todo');
+var User = require('./models/user');
 
 function getTodos(res) {
     Todo.find(function (err, todos) {
@@ -7,13 +8,66 @@ function getTodos(res) {
         if (err) {
             res.send(err);
         }
-
         res.json(todos); // return all todos in JSON format
     });
 }
 ;
 
+function getUsers(res) {
+    User.find(function (err, users) {
+
+        // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+        if (err) {
+            res.send(err);
+        }
+
+        res.json(users); // return all todos in JSON format
+    });
+}
+
 module.exports = function (app) {
+
+    // api ---------------------------------------------------------------------
+    // get all user
+    app.get('/api/users', function (req, res) {
+        // use mongoose to get all todos in the database
+        getUsers(res);
+    });
+
+
+ // create user and send back all todos after creation
+    app.post('/api/users', function (req, res) {
+
+        // create a todo, information comes from AJAX request from Angular
+        User.create({
+            name: req.body.fname + ' ' + req.body.lname,
+            email:req.body.email,
+           
+        }, function (err, todo) {
+            if (err)
+                res.send(err);
+
+            // get and return all the todos after you create another
+            getUsers(res);
+        });
+
+    });
+
+
+       // delete a todo
+    app.delete('/api/users/:todo_id', function (req, res) {
+        User.remove({
+            _id: req.params.todo_id
+        }, function (err, todo) {
+            if (err)
+                res.send(err);
+
+            getUsers(res);
+        });
+    });
+
+
+
 
     // api ---------------------------------------------------------------------
     // get all todos
@@ -53,6 +107,6 @@ module.exports = function (app) {
 
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
-        res.sendFile(__dirname + '/client/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+        res.sendFile(__dirname + '/client/view/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
-};
+}; 
